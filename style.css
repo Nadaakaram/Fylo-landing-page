@@ -13,6 +13,7 @@ header {
   justify-content: space-between;
 }
 
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -26,6 +27,27 @@ nav ul li {
 nav ul li a {
   color: hsl(243, 87%, 12%);
   text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: hsl(224, 93%, 58%);
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: hsl(224, 93%, 58%);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
 }
 h1,
 h2,
@@ -59,6 +81,19 @@ main {
 .hero input::placeholder {
   color: hsl(0, 0%, 75%);
   opacity: 0.5;
+}
+input {
+  transition: all 0.3s ease;
+}
+
+input:hover {
+  border-color: hsl(224, 93%, 58%) !important;
+}
+
+input:focus {
+  outline: none;
+  border-color: hsl(224, 93%, 58%) !important;
+  box-shadow: 0 0 5px rgba(98, 98, 224, 0.5);
 }
 
 .hero button {
@@ -125,6 +160,13 @@ article {
   width: 100%;
   height: 2px;
   background-color: hsl(170, 45%, 43%);
+}
+.feature a:hover {
+  color: hsl(170, 60%, 60%);
+}
+
+.feature a:hover::after {
+  background-color: hsl(170, 60%, 60%);
 }
 .sec {
   margin-top: 20px;
@@ -194,6 +236,23 @@ article {
   font-size: 12px;
   font-weight: 600;
 }
+.hero button, 
+.signup button {
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero button:hover, 
+.signup button:hover {
+  background-color: hsl(224, 93%, 70%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero button:active, 
+.signup button:active {
+  transform: translateY(0);
+}
 
 /* footer */
 footer {
@@ -251,4 +310,13 @@ footer {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
+.links i:hover {
+  background-color: hsl(224, 93%, 58%);
+  border-color: hsl(224, 93%, 58%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
